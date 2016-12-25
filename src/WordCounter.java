@@ -34,9 +34,7 @@ public class WordCounter {
 
         String[] allWordsOptimise = new String[allWords.length - emptyStringNumber];
 
-        for (int i = emptyStringNumber; i < allWords.length; i++) {
-            allWordsOptimise[i - emptyStringNumber] = allWords[i];
-        }
+        System.arraycopy(allWords, emptyStringNumber, allWordsOptimise, 0, allWords.length - emptyStringNumber);
 
         String[] words = new String[10];
         int[] wordsCount = new int[words.length];
@@ -91,16 +89,20 @@ public class WordCounter {
         String line;
 
         try {
-            while ((line = inStream.readLine()) != null) {
-                if (!line.equals(""))
-                    text.append(line.toLowerCase());
+            if (inStream != null) {
+                while ((line = inStream.readLine()) != null) {
+                    if (!line.equals(""))
+                        text.append(line.toLowerCase());
+                }
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
 
         try {
-            inStream.close();
+            if (inStream != null) {
+                inStream.close();
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
