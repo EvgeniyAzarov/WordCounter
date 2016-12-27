@@ -15,10 +15,8 @@ public class WordCounter {
 
         String[] allWords = readToString(new File(filename)).split(" ");
 
-        String del = "[\"',\\.;`:!?\\(\\)<>\\-_]";
-
         for (int i = 0; i < allWords.length; i++) {
-            allWords[i] = allWords[i].replaceAll(del, "");
+            allWords[i] = allWords[i].replaceAll("[\"',\\.;`:!?\\(\\)<>\\-_]", "");
             if (allWords[i].length() == 1) allWords[i] = "";
         }
 
