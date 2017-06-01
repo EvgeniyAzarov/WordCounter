@@ -1,6 +1,6 @@
-# WorrdCounter
+# WordCounter
 
-Подсчитывает количество слов в указанном файле и покаывает список наиболее используемых.
+To run: 
 
-Для запуска: перейдите в каталог, в который вы скачали файл WordCounter.jar и запустите команду
-java -jar WordCounter.jar 
+> cd /directory/to/which/you/download/WordCounter
+> java -jar WordCounter.jar
